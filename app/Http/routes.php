@@ -20,16 +20,16 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 Route::get('add',function(){
-	return view('admin.cate.add');
+	return view('admin.product.add');
 });
 Route::get('list',function(){
-	return view('admin.cate.list');
+	return view('admin.product.list');
 });
 Route::get('edit',function(){
-	return view('admin.cate.edit');
+	return view('admin.product.edit');
 });
 Route::group(['prefix'=>'admin'], function(){
-	Route::group(['prefix'=>'cate'], function(){
-		Route::get('add',['as'=>'admin.cate.getAdd', 'uses'=>'CateController@getAdd']);
+	Route::group(['prefix'=>'product'], function(){
+		Route::get('add',['as'=>'admin.product.getAdd', 'uses'=>'CateController@getAdd']);
 	});
 });
